@@ -8,7 +8,7 @@ class PageFactory extends HtmlConverter
     public function __construct()
     {
         parent::__construct();
-        $this->getConfig()->setOption('strip_tags', true);
+        //$this->getConfig()->setOption('strip_tags', true);
     }
 
     public function make($data)
@@ -21,6 +21,14 @@ class PageFactory extends HtmlConverter
 
     private function genFileName($tag, $date)
     {
-        return $tag . '-' . $date . '.md';
+        return  str_replace(
+            ' ',
+            '-',
+            str_replace(
+                ':',
+                '-',
+                $tag . '-' . $date . '.md'
+            )
+        );
     }
 }
