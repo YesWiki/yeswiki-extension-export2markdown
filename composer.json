@@ -1,0 +1,22 @@
+{
+    "name": "yeswiki/export2markdown",
+    "description": "Extension pour YesWiki qui exporte toute les pages du wikis au format Markdown (1 fichier/page)",
+    "require": {
+        "league/html-to-markdown": "^4.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.3"
+    },
+    "autoload": {
+        "psr-4": {
+          "Export2Markdown\\": "app"
+        }
+    },
+    "license": "GPL3",
+    "authors": [
+        {
+            "name": "Florestan Bredow",
+            "email": "florestan.bredow@daiko.fr"
+        }
+    ]
+}
