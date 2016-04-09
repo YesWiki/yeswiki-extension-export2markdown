@@ -5,15 +5,20 @@ use League\HTMLToMarkdown\HtmlConverter;
 
 class Controller extends HtmlConverter
 {
-    public function __construct($wiki)
+    public function __construct($model)
     {
-        $this->wiki = $wiki;
+        $this->model = $model;
     }
 
-    public function run()
+    public function action()
     {
-        $url = $this->wiki->config['base_url'] . $this->wiki->tag;
-        $view = new ViewButton();
-        $view->show($url);
+        $view = new ViewButton($this->model);
+        $view->show();
+    }
+
+    public function handler()
+    {
+        $view = new ViewExport($this->model);
+        $view->show();
     }
 }

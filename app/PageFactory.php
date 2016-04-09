@@ -8,7 +8,7 @@ class PageFactory extends HtmlConverter
     public function __construct()
     {
         parent::__construct();
-        //$this->getConfig()->setOption('strip_tags', true);
+        $this->getConfig()->setOption('strip_tags', true);
     }
 
     public function make($data)

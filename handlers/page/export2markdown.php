@@ -5,8 +5,8 @@ if (!defined("WIKINI_VERSION")) {
     die("acc&egrave;s direct interdit");
 }
 
-$loader = require __DIR__ . '/../vendor/autoload.php';
+$loader = require __DIR__ . '/../../vendor/autoload.php';
 
 $model = new Export2Markdown($this);
 $controller = new Controller($model);
-$controller->action();
+$controller->handler();

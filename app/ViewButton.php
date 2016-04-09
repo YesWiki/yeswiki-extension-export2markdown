@@ -5,8 +5,9 @@ class ViewButton extends View
 {
     public function show()
     {
+        $url = $this->model->getUrl();
         print(
-            "<a href='$data&export2markdown' class='btn btn-primary'>"
+            "<a href='$url/export2markdown' class='btn btn-primary'>"
             . _t('E2M_EXPORT')
             . '</a>')
         ;
