@@ -21,4 +21,10 @@ class Controller extends HtmlConverter
         $view = new ViewExport($this->model);
         $view->show();
     }
+
+    public function handlerMd()
+    {
+        $view = new ViewMarkdown($this->model);
+        $view->show();
+    }
 }

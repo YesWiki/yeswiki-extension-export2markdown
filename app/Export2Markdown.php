@@ -12,6 +12,15 @@ class Export2Markdown
         $this->wiki = $wiki;
     }
 
+    public function curPage()
+    {
+        $pageFactory = new PageFactory();
+        $pageData = $this->wiki->page;
+        $pageData['body'] = $this->wiki->Format($pageData["body"], "wakka");
+        $page = $pageFactory->make($pageData);
+        return $page->markdown;
+    }
+
     public function makeArchive()
     {
         $zipFile = new \ZipArchive();
@@ -20,6 +29,7 @@ class Export2Markdown
         $pageFactory = new PageFactory();
         $allPages = $this->wiki->LoadAllPages();
         foreach ($allPages as $pageData) {
+            $pageData['body'] = $this->wiki->Format($pageData["body"], "wakka");
             $page = $pageFactory->make($pageData);
             $zipFile->addFromString(
                 $page->filename,
