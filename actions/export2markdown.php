@@ -7,5 +7,5 @@ if (!defined("WIKINI_VERSION")) {
 
 $loader = require __DIR__ . '/../vendor/autoload.php';
 
-$controller = new Controller();
-$controller->run($this);
+$controller = new Controller($this);
+$controller->run();
